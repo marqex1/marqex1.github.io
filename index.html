@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <title>ماركيكس للتسويق الإلكتروني | Marqex - علّم على نجاحك</title>
-    <meta name="description" content="ماركيكس (Marqex) وكالة تسويق متكاملة. إعلانات، هوية بصرية، وتطوير مواقع.">
-    <meta name="keywords" content="ماركيكس, Marqex, ماركيكس للتسويق الإلكتروني, إعلانات ممولة, تصميم مواقع">
+    <meta name="description" content="ماركيكس (Marqex) وكالة تسويق متكاملة متخصصة في الإعلانات الممولة، الهوية البصرية، وتطوير المواقع والأنظمة. شريكك للنمو الحقيقي.">
+    <meta name="keywords" content="ماركيكس, Marqex, ماركيكس للتسويق الإلكتروني, إعلانات ممولة, تصميم مواقع, هوية بصرية, سوشيال ميديا, زيادة مبيعات">
 
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -21,207 +21,398 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
         body { background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; width: 100%; }
 
-        /* --- Mobile Navigation --- */
+        /* --- Header --- */
         header {
             padding: 10px 5%; display: flex; justify-content: space-between; align-items: center;
             position: fixed; width: 100%; top: 0; z-index: 1000;
             background: rgba(2, 8, 23, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,107,0,0.2);
         }
-        .logo-img { height: 45px; width: auto; }
-        
-        .nav-links { display: none; } /* Hidden on mobile by default */
+        .logo-img { height: 50px; width: auto; }
+        nav { display: none; } /* Mobile Hidden */
+        @media (min-width: 1024px) { 
+            nav { display: block; } 
+            nav ul { display: flex; list-style: none; gap: 20px; }
+            nav ul a { text-decoration: none; color: white; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+            nav ul a:hover { color: var(--accent); }
+        }
 
-        /* --- Social Sidebar (Responsive) --- */
+        /* --- Social Sidebar --- */
         .social-sidebar {
-            position: fixed; left: 10px; bottom: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 2000;
+            position: fixed; left: 15px; bottom: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 2000;
         }
         .social-sidebar a {
-            width: 40px; height: 40px; background: var(--card); border: 1px solid var(--accent);
+            width: 42px; height: 42px; background: var(--card); border: 1px solid var(--accent);
             display: flex; align-items: center; justify-content: center; border-radius: 50%;
-            color: var(--accent); text-decoration: none; transition: 0.3s; font-size: 18px;
+            color: var(--accent); text-decoration: none; transition: 0.4s; font-size: 20px;
         }
+        .social-sidebar a:hover { transform: scale(1.2) rotate(360deg); background: var(--accent); color: white; }
 
-        /* --- Global Sections --- */
+        /* --- Sections --- */
         section { padding: 80px 5%; width: 100%; }
-        .section-header { text-align: center; margin-bottom: 40px; }
-        .section-header h2 { font-size: 2rem; font-weight: 900; }
-        .section-header span { color: var(--accent); font-weight: 700; display: block; margin-bottom: 5px; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 2.2rem; font-weight: 900; margin-bottom: 10px; }
+        .section-header span { color: var(--accent); font-weight: bold; letter-spacing: 2px; }
 
-        /* --- Hero Section --- */
-        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 60px; }
-        .hero h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 20px; }
+        /* --- Hero --- */
+        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: radial-gradient(circle at center, #0a192f 0%, #020817 100%); }
+        .hero h1 { font-size: 2.8rem; line-height: 1.2; margin-bottom: 20px; }
         .hero h1 span { color: var(--accent); }
-        .hero p { font-size: 1.1rem; color: var(--dim); margin-bottom: 30px; }
+        .hero p { font-size: 1.1rem; color: var(--dim); max-width: 800px; margin: 0 auto 35px; }
 
         .btn-glow {
-            background: var(--gradient); color: white; padding: 12px 25px; border-radius: 50px;
-            text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; border: none;
+            background: var(--gradient); color: white; padding: 12px 30px; border-radius: 50px;
+            text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; border: none; cursor: pointer;
         }
-        .btn-glow:hover { box-shadow: 0 0 20px var(--accent); transform: scale(1.05); }
+        .btn-glow:hover { box-shadow: 0 0 20px var(--accent); transform: translateY(-3px); }
 
-        /* --- Grid Layouts (Responsive) --- */
+        /* --- Grids --- */
         .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-        @media (min-width: 768px) { 
-            .grid { grid-template-columns: repeat(2, 1fr); } 
-            .section-header h2 { font-size: 3rem; }
-            .hero h1 { font-size: 4rem; }
-            .logo-img { height: 60px; }
-        }
+        @media (min-width: 768px) { .grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); } }
 
-        /* --- Services --- */
-        .card { background: var(--card); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,107,0,0.1); }
-        .card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 15px; }
+        /* --- Cards --- */
+        .card { background: var(--card); padding: 35px; border-radius: 25px; border: 1px solid rgba(255,107,0,0.1); transition: 0.4s; }
+        .card:hover { border-color: var(--accent); transform: translateY(-10px); }
+        .card i { font-size: 2.8rem; color: var(--accent); margin-bottom: 20px; }
 
-        /* --- Portfolio Tabs (New Section) --- */
+        /* --- How We Work (Timeline) --- */
+        .process-item { border-right: 3px solid var(--accent); padding-right: 20px; margin-bottom: 30px; position: relative; }
+        .process-item h4 { color: var(--accent); font-size: 1.4rem; }
+
+        /* --- Portfolio Gallery --- */
         .portfolio-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
-        .tab-btn { background: var(--card); color: var(--text); border: 1px solid var(--accent); padding: 8px 15px; border-radius: 20px; cursor: pointer; transition: 0.3s; font-size: 0.9rem; }
+        .tab-btn { background: var(--card); color: var(--text); border: 1px solid var(--accent); padding: 10px 20px; border-radius: 25px; cursor: pointer; }
         .tab-btn.active { background: var(--accent); color: white; }
-        
-        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; }
-        .portfolio-item { background: #111; border-radius: 10px; overflow: hidden; height: 180px; border: 1px solid #333; position: relative; }
-        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
-        .portfolio-item:after { content: 'Marqex Work'; position: absolute; bottom: 5px; right: 5px; font-size: 10px; color: var(--accent); }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; }
+        .portfolio-item { background: #111; border-radius: 15px; overflow: hidden; height: 200px; border: 1px solid #333; transition: 0.3s; }
+        .portfolio-item:hover { transform: scale(1.03); border-color: var(--accent); }
+        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* --- Blog --- */
-        .blog-card h3 { color: var(--accent); font-size: 1.2rem; margin-bottom: 10px; }
-        .blog-card p { font-size: 0.9rem; margin-bottom: 15px; color: var(--dim); }
+        /* --- FAQ --- */
+        .faq-item { background: var(--card); padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+        .faq-item h4 { color: var(--accent); margin-bottom: 5px; }
 
-        /* --- Modals --- */
-        .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); align-items: center; justify-content: center; padding: 15px; }
-        .modal-body { background: var(--card); padding: 25px; border-radius: 20px; width: 100%; max-width: 500px; border: 2px solid var(--accent); position: relative; text-align: center; }
-        .close-modal { position: absolute; top: 10px; left: 15px; font-size: 30px; color: var(--accent); cursor: pointer; }
+        /* --- Marqex Trends (New Section) --- */
+        .trend-post { 
+            background: var(--card); border-radius: 15px; overflow: hidden; 
+            border: 1px solid rgba(255,107,0,0.1); 
+        }
+        .trend-post-header { padding: 15px; display: flex; align-items: center; gap: 10px; }
+        .trend-post-header img { height: 35px; width: 35px; border-radius: 50%; border: 1px solid var(--accent); object-fit: cover; }
+        .trend-post-content img { width: 100%; display: block; }
+        .trend-post-body { padding: 15px; }
+        .trend-post-body p { font-size: 0.9rem; margin-bottom: 15px; }
+        .trend-post-actions { display: flex; gap: 20px; border-top: 1px solid #222; padding-top: 10px; }
+        .trend-post-actions button { 
+            background:none; border:none; color:var(--dim); cursor:pointer; 
+            display:flex; align-items:center; gap:5px; font-size: 0.9rem;
+        }
+        .trend-post-actions button i { font-size: 1.1rem; }
+        .trend-post-actions button .fas.fa-heart { color: #ff4b2b; } /* Liked state */
 
-        footer { text-align: center; padding: 40px 5%; border-top: 1px solid #333; font-size: 0.8rem; color: var(--dim); }
+
+        /* --- Modal --- */
+        .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); align-items: center; justify-content: center; padding: 20px; }
+        .modal-body { background: var(--card); padding: 30px; border-radius: 25px; width: 100%; max-width: 550px; border: 2px solid var(--accent); text-align: center; }
+        .close-modal { position: absolute; top: 15px; left: 20px; font-size: 30px; color: var(--accent); cursor: pointer; }
+
+        footer { text-align: center; padding: 50px 5%; background: #01040a; border-top: 1px solid #222; }
+
+        @media (min-width: 768px) {
+            .hero h1 { font-size: 4.5rem; }
+            .section-header h2 { font-size: 3rem; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="Logo-white.png" alt="Marqex" class="logo-img">
-        <a href="https://wa.me/201019139578" class="btn-glow" style="font-size: 0.8rem; padding: 8px 15px;">احجز الآن</a>
+        <img src="Logo-white.png" alt="Marqex Logo" class="logo-img">
+        <nav>
+            <ul>
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#portfolio">أعمالنا</a></li>
+                <li><a href="#blog">المدونة</a></li>
+                <li><a href="#trends">تريند ماركيكس</a></li>
+            </ul>
+        </nav>
+        <a href="https://wa.me/201019139578" class="btn-glow">استشارة مجانية</a>
     </header>
 
     <div class="social-sidebar">
         <a href="https://www.facebook.com/Marqex/" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/marqex11/#" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://www.tiktok.com/@marqex2" target="_blank"><i class="fab fa-tiktok"></i></a>
-        <a href="https://wa.me/201019139578" style="background:#25d366; color:white;"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://wa.me/201019139578" style="background:#25d366; color:white; border:none;"><i class="fab fa-whatsapp"></i></a>
     </div>
 
     <section class="hero" id="home">
-        <div data-aos="fade-up">
-            <span>MARQEX AGENCY</span>
+        <div data-aos="zoom-in">
+            <span style="color:var(--accent); font-weight:bold; letter-spacing:4px;">MARQEX AGENCY</span>
             <h1>علّم على <span>نجاحك</span></h1>
-            <p>ماركيكس للتسويق الإلكتروني: نحول أفكارك لنتائج نراها في مبيعاتك.</p>
-            <a href="#services" class="btn-glow">ابدأ رحلتك</a>
+            <p>نحن شركة تسويق إلكتروني بنساعد البراندات تكبر، تبيع، وتثبت في السوق من خلال استراتيجيات ذكية وتنفيذ احترافي.</p>
+            <a href="https://wa.me/201019139578" class="btn-glow">تواصل معنا الآن</a>
         </div>
     </section>
 
-    <section id="services">
+    <section id="about">
+        <div class="grid" style="align-items: center;">
+            <div data-aos="fade-right">
+                <div class="section-header" style="text-align: right;">
+                    <span>ABOUT US</span>
+                    <h2>من هي Marqex؟</h2>
+                </div>
+                <p>ماركيكس هي شريك نمو متكامل متخصص في تحويل التسويق من مجرد تكلفة إلى استثمار مربح. نؤمن بالأرقام والنتائج ولا شيء غيرها، مما يجعلنا الخيار الأول لـ **ماركيكس للتسويق الإلكتروني**.</p>
+                <div class="grid" style="grid-template-columns: 1fr 1fr; margin-top: 20px; gap: 10px;">
+                    <div style="background:var(--card); padding:15px; border-radius:10px; border-right:3px solid var(--accent);">
+                        <h5>رؤيتنا</h5><p style="font-size:0.8rem;">نكون الشريك الأول للنمو الحقيقي لأي مشروع.</p>
+                    </div>
+                    <div style="background:var(--card); padding:15px; border-radius:10px; border-right:3px solid var(--accent);">
+                        <h5>قيمنا</h5><p style="font-size:0.8rem;">الشفافية المطلقة والالتزام بالنتائج الملموسة.</p>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-left" style="text-align:center;">
+                <img src="Logo-white.png" alt="Marqex Identity" style="max-width:200px; opacity:0.2;">
+            </div>
+        </div>
+    </section>
+
+    <section id="services" style="background: #040d1f;">
         <div class="section-header">
-            <span>SERVICES</span>
-            <h2>خدمات ماركيكس</h2>
+            <span>OUR SOLUTIONS</span>
+            <h2>خدمات ماركيكس للتسويق الإلكتروني</h2>
         </div>
         <div class="grid">
             <div class="card" data-aos="fade-up">
-                <i class="fas fa-bullhorn"></i>
-                <h3>إدارة الإعلانات</h3>
-                <p>إعلانات ممولة تستهدف العميل الصح في الوقت الصح.</p>
+                <i class="fas fa-ad"></i>
+                <h3>إدارة الحملات الإعلانية</h3>
+                <p>نطلق حملات إعلانية ممولة (Meta, Google, TikTok) تستهدف العميل المستعد للشراء، ونضمن أعلى عائد استثمار (ROI) لـ **Marqex**.</p>
             </div>
             <div class="card" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-palette"></i>
-                <h3>الهوية البصرية</h3>
-                <p>تصميم لوجو وبراند كامل يعبر عن قوة مشروعك.</p>
+                <i class="fas fa-fingerprint"></i>
+                <h3>تصميم الهوية البصرية</h3>
+                <p>نبني براند متكامل (لوجو، ألوان، خطوط) يترك بصمة قوية ومهنية لدى عملائك، وهو أساس نجاح **ماركيكس**.</p>
             </div>
             <div class="card" data-aos="fade-up" data-aos-delay="200">
                 <i class="fas fa-code"></i>
-                <h3>تطوير المواقع</h3>
-                <p>برمجة مواقع سريعة ومتوافقة مع الموبايل و SEO.</p>
+                <h3>تطوير المواقع والأنظمة</h3>
+                <p>نبرمج مواقع سريعة، جذابة، ومهيئة لمحركات البحث (SEO) لتصدر النتائج، بالإضافة لحلول برمجية خاصة بأعمال **Marqex**.</p>
             </div>
         </div>
     </section>
 
-    <section id="portfolio" style="background: #040d1f;">
+    <section id="portfolio">
         <div class="section-header">
-            <span>OUR WORK</span>
-            <h2>بعض من أعمالنا</h2>
+            <span>PORTFOLIO</span>
+            <h2>معرض أعمال ماركيكس</h2>
         </div>
-        
         <div class="portfolio-tabs">
             <button class="tab-btn active" onclick="filterWork('all')">الكل</button>
             <button class="tab-btn" onclick="filterWork('ads')">إعلانات</button>
             <button class="tab-btn" onclick="filterWork('branding')">هوية</button>
             <button class="tab-btn" onclick="filterWork('web')">مواقع</button>
         </div>
+        <div class="portfolio-grid" id="pGrid">
+            <div class="portfolio-item ads"><img src="https://via.placeholder.com/400x500/0a1428/ff6b00?text=Marqex+Ad+1" alt="Marqex Ads Work"></div>
+            <div class="portfolio-item branding"><img src="https://via.placeholder.com/400x500/0a1428/ff6b00?text=Marqex+Logo+1" alt="Marqex Branding Work"></div>
+            <div class="portfolio-item web"><img src="https://via.placeholder.com/400x500/0a1428/ff6b00?text=Marqex+Website+1" alt="Marqex Web Dev Work"></div>
+            <div class="portfolio-item ads"><img src="https://via.placeholder.com/400x500/0a1428/ff6b00?text=Marqex+Ad+2" alt="Marqex Ads Work"></div>
+            <div class="portfolio-item branding"><img src="https://via.placeholder.com/400x500/0a1428/ff6b00?text=Marqex+Logo+2" alt="Marqex Branding Work"></div>
+        </div>
+    </section>
 
-        <div class="portfolio-grid" id="portfolioGrid">
-            <div class="portfolio-item ads"><img src="https://via.placeholder.com/300x400?text=Ad+1" alt="Marqex Work"></div>
-            <div class="portfolio-item branding"><img src="https://via.placeholder.com/300x400?text=Logo+1" alt="Marqex Work"></div>
-            <div class="portfolio-item web"><img src="https://via.placeholder.com/300x400?text=Web+1" alt="Marqex Work"></div>
-            <div class="portfolio-item ads"><img src="https://via.placeholder.com/300x400?text=Ad+2" alt="Marqex Work"></div>
-            <div class="portfolio-item branding"><img src="https://via.placeholder.com/300x400?text=Logo+2" alt="Marqex Work"></div>
-            <div class="portfolio-item web"><img src="https://via.placeholder.com/300x400?text=Web+2" alt="Marqex Work"></div>
+    <section id="how-we-work" style="background: #040d1f;">
+        <div class="section-header"><h2>آلية العمل في <span>ماركيكس</span></h2></div>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="process-item" data-aos="fade-right"><h4>01. تحليل وفهم</h4><p>ندرس مشروعك ومنافسيك بعمق لنضع استراتيجية **Marqex**.</p></div>
+            <div class="process-item" data-aos="fade-right" data-aos-delay="100"><h4>02. بناء الاستراتيجية</h4><p>نضع خارطة طريق واضحة للوصول لأهدافك التسويقية مع **ماركيكس**.</p></div>
+            <div class="process-item" data-aos="fade-right" data-aos-delay="200"><h4>03. التنفيذ الاحترافي</h4><p>إطلاق الحملات والتصاميم بأعلى جودة وإبداع فريق **Marqex**.</p></div>
+            <div class="process-item" data-aos="fade-right" data-aos-delay="300"><h4>04. المتابعة والتقارير</h4><p>نتابع النتائج ونشاركك كل التفاصيل بشفافية تامة من **ماركيكس للتسويق الإلكتروني**.</p></div>
         </div>
     </section>
 
     <section id="blog">
-        <div class="section-header"><h2>مدونة <span>ماركيكس</span></h2></div>
+        <div class="section-header"><h2>مدونة <span>Marqex</span></h2></div>
         <div class="grid">
-            <div class="card blog-card">
+            <div class="card" data-aos="flip-left">
                 <h3>ليه إعلاناتك بتفشل؟</h3>
-                <button class="btn-glow" onclick="openBlog('fail')">اعرف الحل</button>
+                <button class="btn-glow" onclick="openBlog('fail')">اقرأ الحل من ماركيكس</button>
             </div>
-            <div class="card blog-card">
+            <div class="card" data-aos="flip-left" data-aos-delay="100">
                 <h3>ليه مش بتبيع؟</h3>
-                <button class="btn-glow" onclick="openBlog('sales')">اعرف السر</button>
+                <button class="btn-glow" onclick="openBlog('sales')">اكتشف السر مع Marqex</button>
             </div>
-            <div class="card blog-card">
+            <div class="card" data-aos="flip-left" data-aos-delay="200">
                 <h3>تصميمك مش جذاب؟</h3>
-                <button class="btn-glow" onclick="openBlog('design')">اعرف المعايير</button>
+                <button class="btn-glow" onclick="openBlog('design')">تعلم مع ماركيكس</button>
             </div>
         </div>
     </section>
+
+    <section id="trends" style="background: #040d1f;">
+        <div class="section-header">
+            <span>MARQEX TRENDS</span>
+            <h2>آخر أخبار ونتائج ماركيكس</h2>
+            <p style="color:var(--dim);">تابع أحدث استراتيجياتنا ونتائج عملائنا أول بأول من **ماركيكس للتسويق الإلكتروني**.</p>
+        </div>
+
+        <div class="grid" style="max-width: 1000px; margin: 0 auto;">
+            
+            <div class="card trend-post" data-aos="fade-up">
+                <div class="trend-post-header">
+                    <img src="Logo-white.png" alt="Marqex Profile">
+                    <strong>Marqex Agency</strong>
+                </div>
+                <div class="trend-post-content">
+                    <img src="https://via.placeholder.com/500x350/1a2a44/ff6b00?text=Marqex+Sales+Boost" alt="Marqex Ad Design">
+                </div>
+                <div class="trend-post-body">
+                    <p>
+                        📈 عملائنا في قطاع المطاعم يحققون قفزات غير مسبوقة في المبيعات! 
+                        بفضل استراتيجيات **Marqex** للإعلانات الممولة، حققنا زيادة 300% في الطلبات خلال شهر واحد. 🚀
+                        #ماركيكس #تسويق_مطاعم #زيادة_مبيعات
+                    </p>
+                    <div class="trend-post-actions">
+                        <button onclick="likePost(this)"><i class="far fa-heart"></i> <span class="count">75</span></button>
+                        <button onclick="commentFocus(this)"><i class="far fa-comment"></i> <span>18</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card trend-post" data-aos="fade-up" data-aos-delay="100">
+                <div class="trend-post-header">
+                    <img src="Logo-white.png" alt="Marqex Profile">
+                    <strong>Marqex Agency</strong>
+                </div>
+                <div class="trend-post-content">
+                    <img src="https://via.placeholder.com/500x350/1a2a44/ff6b00?text=Marqex+Brand+Identity" alt="Marqex Branding">
+                </div>
+                <div class="trend-post-body">
+                    <p>
+                        ✨ صممنا هوية بصرية جديدة لشركة عقارات ناشئة، النتيجة: ثقة أكبر من العملاء وانطباع بالفخامة. 
+                        الهوية مش مجرد لوجو، هي قصة براندك اللي **Marqex** بتصممها. 
+                        #هوية_بصرية #تصميم #Marqex
+                    </p>
+                    <div class="trend-post-actions">
+                        <button onclick="likePost(this)"><i class="far fa-heart"></i> <span class="count">62</span></button>
+                        <button onclick="commentFocus(this)"><i class="far fa-comment"></i> <span>10</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card trend-post" data-aos="fade-up" data-aos-delay="200">
+                <div class="trend-post-header">
+                    <img src="Logo-white.png" alt="Marqex Profile">
+                    <strong>Marqex Agency</strong>
+                </div>
+                <div class="trend-post-content">
+                    <img src="https://via.placeholder.com/500x350/1a2a44/ff6b00?text=Marqex+Website+Launch" alt="Marqex Web Development">
+                </div>
+                <div class="trend-post-body">
+                    <p>
+                        🚀 أطلقنا موقع إلكتروني جديد لمتجر ملابس أونلاين، سرعة فائقة وتصميم عصري متوافق مع الموبايل. 
+                        موقعك هو واجهة عملك على الإنترنت، ودور **ماركيكس للتسويق الإلكتروني** إنه يكون الأفضل.
+                        #تصميم_مواقع #تجارة_الكترونية #Marqex
+                    </p>
+                    <div class="trend-post-actions">
+                        <button onclick="likePost(this)"><i class="far fa-heart"></i> <span class="count">50</span></button>
+                        <button onclick="commentFocus(this)"><i class="far fa-comment"></i> <span>7</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card trend-post" data-aos="fade-up">
+                <div class="trend-post-header">
+                    <img src="Logo-white.png" alt="Marqex Profile">
+                    <strong>Marqex Agency</strong>
+                </div>
+                <div class="trend-post-content">
+                    <img src="https://via.placeholder.com/500x350/1a2a44/ff6b00?text=Marqex+SEO+Tips" alt="Marqex SEO Tips">
+                </div>
+                <div class="trend-post-body">
+                    <p>
+                        💡 هل موقعك بيظهر في أولى نتائج البحث؟ 
+                        خدمات SEO من **Marqex** بتضمنلك الصدارة. تذكر: المحتوى الجيد هو ملك الـ SEO.
+                        #SEO #تسويق_رقمي #MarqexTips
+                    </p>
+                    <div class="trend-post-actions">
+                        <button onclick="likePost(this)"><i class="far fa-heart"></i> <span class="count">88</span></button>
+                        <button onclick="commentFocus(this)"><i class="far fa-comment"></i> <span>25</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card trend-post" data-aos="fade-up" data-aos-delay="100">
+                <div class="trend-post-header">
+                    <img src="Logo-white.png" alt="Marqex Profile">
+                    <strong>Marqex Agency</strong>
+                </div>
+                <div class="trend-post-content">
+                    <img src="https://via.placeholder.com/500x350/1a2a44/ff6b00?text=Marqex+Social+Media" alt="Marqex Social Media Strategy">
+                </div>
+                <div class="trend-post-body">
+                    <p>
+                        📱 إدارة حسابات السوشيال ميديا بذكاء هي مفتاح التفاعل والولاء. 
+                        خطط محتوى **ماركيكس** بتخلي جمهورك يتفاعل مع كل منشور. 
+                        #سوشيال_ميديا #تسويق_محتوى #MarqexAgency
+                    </p>
+                    <div class="trend-post-actions">
+                        <button onclick="likePost(this)"><i class="far fa-heart"></i> <span class="count">91</span></button>
+                        <button onclick="commentFocus(this)"><i class="far fa-comment"></i> <span>30</span></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="faq" style="background: #020817;">
+        <div class="section-header"><h2>الأسئلة <span>الشائعة</span> عن Marqex</h2></div>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="faq-item" data-aos="fade-up"><h4>متى تظهر النتائج من خدمات ماركيكس؟</h4><p>تختلف المدة حسب نوع الخدمة وأهداف الحملة، ولكن في **Marqex** نلتزم بتحقيق نتائج ملموسة في أقرب وقت ممكن، والإعلانات تبدأ في جلب النتائج فوراً.</p></div>
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="100"><h4>هل توفرون تقارير أداء دورية؟</h4><p>نعم، في **ماركيكس للتسويق الإلكتروني** نؤمن بالشفافية الكاملة. نقدم تقارير أداء أسبوعية وشهرية مفصلة توضح كل المؤشرات ونتائج حملاتك.</p></div>
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="200"><h4>ما الذي يميز Marqex عن باقي الشركات؟</h4><p>في **ماركيكس**، نركز على بناء استراتيجيات مخصصة لكل عميل، ولا نستخدم قوالب جاهزة. كل مشروع له خطته الخاصة التي تضمن له التميز والنمو.</p></div>
+        </div>
+    </section>
+
+    <footer>
+        <img src="Logo-white.png" alt="Marqex Logo" style="height:50px; margin-bottom: 20px;">
+        <p>ماركيكس للتسويق الإلكتروني - علّم على نجاحك</p>
+        <p style="color:var(--dim); font-size: 0.8rem; margin-top: 10px;">&copy; 2026 Marqex Agency. All Rights Reserved.</p>
+    </footer>
 
     <div id="blogModal" class="modal">
         <div class="modal-body">
             <span class="close-modal" onclick="closeBlogModal()">&times;</span>
             <h2 id="mTitle" style="color:var(--accent); margin-bottom:15px;"></h2>
-            <p id="mBody" style="margin-bottom:20px; font-size:0.95rem;"></p>
-            <a href="https://wa.me/201019139578" class="btn-glow" style="background:#25d366;">احجز استشارتك الآن</a>
+            <p id="mBody" style="line-height:1.8; margin-bottom:20px;"></p>
+            <a href="https://wa.me/201019139578" class="btn-glow" style="background:#25d366;">احجز لتطوير بيزنسك الآن</a>
         </div>
     </div>
-
-    <footer>
-        <p>&copy; 2026 Marqex | ماركيكس للتسويق الإلكتروني</p>
-        <p>علّم على نجاحك</p>
-    </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true });
 
-        // Filter Portfolio
-        function filterWork(category) {
+        // Portfolio Filter
+        function filterWork(cat) {
             const items = document.querySelectorAll('.portfolio-item');
             const btns = document.querySelectorAll('.tab-btn');
-            
-            btns.forEach(btn => btn.classList.remove('active'));
+            btns.forEach(b => b.classList.remove('active'));
             event.target.classList.add('active');
-
-            items.forEach(item => {
-                if (category === 'all' || item.classList.contains(category)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
+            items.forEach(i => {
+                if (cat === 'all' || i.classList.contains(cat)) i.style.display = 'block';
+                else i.style.display = 'none';
             });
         }
 
         const blogData = {
-            fail: { title: "لماذا تفشل إعلاناتك؟", body: "إعلاناتك تفشل لأنها تفتقر للرسالة الصحيحة الموجهة للجمهور الصحيح. في ماركيكس نركز على كتابة نصوص بيعية جذابة وتحديد استهداف دقيق جداً." },
-            sales: { title: "سر المبيعات الضائعة", body: "البيع يتوقف على رحلة العميل. إذا كان العميل يسأل ولا يشتري، فأنت تفتقر لنظام 'إعادة الاستهداف' الذي توفره لك ماركيكس باحترافية." },
-            design: { title: "قوة التصميم الإبداعي", body: "التصميم السيئ يعطي انطباعاً بعدم الاحترافية. نحن في ماركيكس نصمم لك هوية تجذب العين وتجبر العميل على الثقة في جودة ما تقدمه." }
+            fail: { title: "ليه إعلاناتك بتفشل؟", body: "في ماركيكس بنحلل المنافسين وبنكتب سكريبت إعلاني بيعي بيجبر العميل يتفاعل، مع اختيار صور وفيديوهات بتوقف العميل وهو بيعمل سكرول." },
+            sales: { title: "ليه مش بتبيع؟", body: "البيع مش ضغطة زرار، البيع هو بناء ثقة. إحنا بنعملك نظام 'Re-targeting' يلاحق العميل المهتم لحد ما يشتري منك فعلياً." },
+            design: { title: "تصميمك مش جذاب؟", body: "التصميم عندنا مبني على سيكولوجية الألوان. بنخلي العميل يثق في براندك من أول نظرة ويحس باحترافية شركتك." }
         };
 
         function openBlog(key) {
@@ -229,10 +420,3 @@
             document.getElementById('mBody').innerText = blogData[key].body;
             document.getElementById('blogModal').style.display = 'flex';
         }
-
-        function closeBlogModal() {
-            document.getElementById('blogModal').style.display = 'none';
-        }
-    </script>
-</body>
-</html>
